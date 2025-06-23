@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { BookOpen, Code, Brain, Shield, Star, CheckCircle } from "lucide-react";
 import TheoreticalSection from "@/components/TheoreticalSection";
 import PracticalSection from "@/components/PracticalSection";
+
 import EthicalSection from "@/components/EthicalSection";
 import BonusSection from "@/components/BonusSection";
 import ProgressTracker from "@/components/ProgressTracker";
@@ -22,6 +23,19 @@ const Index = () => {
   ];
 
   const overallProgress = (completedSections.length / sections.length) * 100;
+
+  // Load saved completed sections from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("completedSections");
+    if (saved) {
+      setCompletedSections(JSON.parse(saved));
+    }
+  }, []);
+
+  // Save completed sections to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("completedSections", JSON.stringify(completedSections));
+  }, [completedSections]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">

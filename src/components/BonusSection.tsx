@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -162,7 +161,7 @@ const BonusSection = ({ onComplete }: BonusSectionProps) => {
               id="impact"
               placeholder="Describe the expected benefits, metrics for success, and potential impact on software development..."
               value={proposal.impact}
-              onChange={(e) => handleInput("impact", e.target.value)}
+              onChange={(e) => handleInputChange("impact", e.target.value)}
               className="min-h-[100px]"
             />
           </div>

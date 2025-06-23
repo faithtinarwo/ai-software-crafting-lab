@@ -28,6 +28,13 @@ const Index = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
+          <div className="mb-6 flex justify-center">
+            <img 
+              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="AI Robot - Artificial Intelligence in Software Engineering"
+              className="rounded-2xl shadow-2xl w-80 h-60 object-cover border-4 border-white"
+            />
+          </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
             AI in Software Engineering Assignment
           </h1>
